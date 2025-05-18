@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Man Figure 1 (Formal) -->
+    <g transform="translate(30, 10)">
+        <!-- Suit -->
+        <path d="M30 20V50M20 30H40M25 50V80M35 50V80" stroke="#7C9B7C" stroke-width="2"/>
+        <!-- Head -->
+        <circle cx="30" cy="15" r="10" stroke="#7C9B7C" stroke-width="2"/>
+        <!-- Tie -->
+        <path d="M28 25L30 30L32 25" stroke="#7C9B7C" stroke-width="2"/>
+    </g>
+
+    <!-- Woman Figure (Dress) -->
+    <g transform="translate(120, 10)">
+        <!-- Dress -->
+        <path d="M30 20V35M20 35C20 35 30 80 30 80C30 80 40 35 40 35" stroke="#7C9B7C" stroke-width="2"/>
+        <!-- Head -->
+        <circle cx="30" cy="15" r="10" stroke="#7C9B7C" stroke-width="2"/>
+        <!-- Hair -->
+        <path d="M22 15C22 15 30 25 38 15" stroke="#7C9B7C" stroke-width="2"/>
+    </g>
+
+    <!-- Man Figure 2 (Semi-formal) -->
+    <g transform="translate(210, 10)">
+        <!-- Shirt and Pants -->
+        <path d="M30 20V50M20 30H40M25 50V80M35 50V80" stroke="#7C9B7C" stroke-width="2"/>
+        <!-- Head -->
+        <circle cx="30" cy="15" r="10" stroke="#7C9B7C" stroke-width="2"/>
+        <!-- Collar -->
+        <path d="M25 25L30 30L35 25" stroke="#7C9B7C" stroke-width="2"/>
+    </g>
+
+    <!-- Labels -->
+    <text x="30" y="95" font-family="Arial" font-size="10" fill="#7C9B7C" text-anchor="middle">Formal</text>
+    <text x="120" y="95" font-family="Arial" font-size="10" fill="#7C9B7C" text-anchor="middle">Semi-formal</text>
+    <text x="210" y="95" font-family="Arial" font-size="10" fill="#7C9B7C" text-anchor="middle">Smart Casual</text>
+</svg> 

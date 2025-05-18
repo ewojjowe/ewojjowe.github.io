@@ -1,0 +1,842 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noticia Text', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.newspaper-header {
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.newspaper-title {
+    font-family: "New Rocker", system-ui;
+    font-size: 5rem;
+    text-align: center;
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.date-line {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.date-line div {
+    flex: 1;
+    padding: 0.5rem 0;
+    font-family: 'Noticia Text', serif;
+    font-size: 1.2rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #333;
+}
+
+.date-line div:not(:last-child) {
+    border-right: 2px solid #333;
+}
+
+@media (max-width: 768px) {
+    .newspaper-title {
+        font-size: 2.5rem;
+    }
+    
+    .date-line {
+        font-size: 1rem;
+    }
+}
+
+/* Main Title Styles */
+.main-title {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.main-title h2 {
+    font-family: 'Special Gothic Condensed One', serif;
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-color: #7C9B7C;
+    color: white;
+}
+
+.main-title h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0;
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.venue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.church, .reception {
+    text-align: left;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.venue-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 0.2rem;
+}
+
+.venue p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-image, .second-image {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.main-image img, .second-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.invitation-text, .additional-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    flex: 1;
+}
+
+.additional-text {
+    padding-top: 1rem;
+    border-top: 3px solid #000000;
+}
+
+.couple-names {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+    padding-top: 2rem;
+}
+
+/* Page 2 Specific Styles */
+.page2-header {
+    background-color: #7C9B7C;
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -2rem -2rem 2rem -2rem;
+}
+
+.header-left {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+.home-link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.home-link:hover {
+    color: #E8F1E8;
+}
+
+.header-right {
+    font-size: 1rem;
+}
+
+.next-page-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.next-page-link:hover {
+    color: #E8F1E8;
+}
+
+.entourage-title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.entourage-title h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 5rem;
+    color: #333;
+    font-weight: normal;
+}
+
+.couple-photo {
+    position: relative;
+    margin: 2rem 0;
+    border: 3px solid #7C9B7C;
+    border-bottom: 2px solid #7C9B7C;
+    padding: 1rem 1rem 2rem;
+}
+
+.couple-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photo-caption {
+    text-align: center;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: -1.5rem;
+    width: calc(100% - 2rem);
+}
+
+.photo-caption h2 {
+    font-family: 'Noticia Text', serif;
+    font-size: 4rem;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.photo-caption h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #666;
+    line-height: 1;
+    width: 11.25rem;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.parents-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.parents-column {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.parents-column h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: #333;
+}
+
+.parents-column p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.parents-section p span.deceased {
+    padding: 0 0.1rem;
+    background: #eae6e6;
+}
+
+.sponsors-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.sponsors-section h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    color: #333;
+}
+
+.sponsors-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.sponsor-column {
+    flex: 1;
+}
+
+.sponsor-column p {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.secondary-sponsors {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.secondary-sponsors h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    color: #333;
+}
+
+.secondary-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.secondary-column {
+    flex: 1;
+}
+
+.secondary-column h4 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: #666;
+}
+
+.secondary-column p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Page 3 Specific Styles */
+.wedding-party {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.party-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 4rem;
+}
+
+.party-column {
+    flex: 1;
+}
+
+.party-column h3,
+.flower-girls h3,
+.bearers h3,
+.offerers h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: #333;
+}
+
+.party-column p,
+.flower-girls-names p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.flower-girls {
+    margin: 3rem 0;
+}
+
+.flower-girls-names {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.bearers,
+.offerers {
+    margin: 3rem 0;
+}
+
+.bearers-grid,
+.offerers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 1.5rem;
+}
+
+.bearer-item,
+.offerer-item {
+    flex: 1;
+    max-width: 250px;
+}
+
+.bearer-item h4,
+.offerer-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.bearer-item p,
+.offerer-item p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+}
+
+/* Additional Responsive Styles for Page 3 */
+@media (max-width: 768px) {
+    .party-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .flower-girls-names {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bearers-grid,
+    .offerers-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .bearer-item,
+    .offerer-item {
+        width: 100%;
+        max-width: none;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .newspaper-title {
+        font-size: 2rem;
+    }
+
+    .main-title h2 {
+        font-size: 2rem;
+    }
+
+    .main-title h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .date-line {
+        font-size: 0.9rem;
+    }
+
+    .parents-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .sponsors-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .secondary-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .entourage-title h1 {
+        font-size: 3rem;
+    }
+
+    .parents-column {
+        padding: 0;
+    }
+}
+
+/* Page 4 Specific Styles */
+.forever-title {
+    text-align: center;
+    margin: 2rem 0 3rem;
+}
+
+.forever-title h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 5rem;
+    color: #333;
+    font-weight: normal;
+}
+
+.guides-container {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.left-guide,
+.right-guide {
+    flex: 1;
+}
+
+.motorcycle-photo,
+.cafe-photo {
+    margin-bottom: 2rem;
+}
+
+.motorcycle-photo img,
+.cafe-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0.5rem;
+}
+
+.attire-guide,
+.gift-guide {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.attire-guide h2,
+.gift-guide h2 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+.attire-guide p,
+.gift-guide p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem auto;
+    position: relative;
+    width: 6rem;
+    align-items: center;
+}
+
+.color-swatch {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.attire-figures {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.attire-icons {
+    height: 100px;
+    width: auto;
+    max-width: 100%;
+}
+
+.qr-code {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.qr-code img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border: 4px solid;
+    border-radius: 1rem;
+}
+
+.qr-code p {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.5rem auto 0;
+    width: max-content;
+    background: grey;
+    color: #FFFFFF;
+    padding: 0.2rem 0.5rem;
+    font-family: 'Playfair Display';
+}
+
+.rsvp-section {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #ddd;
+}
+
+.rsvp-section h2 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+.rsvp-section p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.rsvp-date {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Additional Responsive Styles for Page 4 */
+@media (max-width: 768px) {
+    .guides-container {
+        flex-direction: column;
+    }
+
+    .forever-title h1 {
+        font-size: 3rem;
+    }
+
+    .color-palette {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .color-swatch {
+        width: 25px;
+        height: 25px;
+    }
+
+    .qr-code img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.dress-code-guide {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+.dress-code-item {
+    flex: 1;
+    max-width: 250px;
+    padding: 1rem;
+    border: 1px solid #CBD8CB;
+    border-radius: 8px;
+    background-color: #f9fbf9;
+}
+
+.dress-code-item h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.8rem;
+    color: #7C9B7C;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.dress-code-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #4A5D4C;
+}
+
+@media (max-width: 768px) {
+    .dress-code-guide {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .dress-code-item {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* RSVP Form Styles */
+.rsvp-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9fbf9;
+    border: 1px solid #CBD8CB;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4A5D4C;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #CBD8CB;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #7C9B7C;
+    box-shadow: 0 0 0 2px rgba(124, 155, 124, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #7C9B7C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #4A5D4C;
+}
+
+@media (max-width: 768px) {
+    .rsvp-form {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+}
+
+/* Page Navigation Styles */
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.prev-page,
+.next-page {
+    text-decoration: none;
+    color: #7C9B7C;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #7C9B7C;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.prev-page:hover,
+.next-page:hover {
+    background-color: #7C9B7C;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .page-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .prev-page,
+    .next-page {
+        width: 100%;
+        text-align: center;
+    }
+} 
+
+@media (max-width: 425px) {
+    .left-section, .right-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .photo-caption h2 {
+        font-size: 1.3rem;
+    }
+
+    .forever-title {
+        margin: 2rem 0;
+    }
+}

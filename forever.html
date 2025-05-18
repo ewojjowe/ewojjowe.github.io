@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Starts Here - Wedding News</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Pinyon+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="newspaper-header page2-header">
+            <div class="header-left"><a href="index.html" class="home-link">The Wedding News</a></div>
+            <div class="header-right"></div>
+        </header>
+
+        <div class="forever-title">
+            <h1>Forever Starts Here!</h1>
+        </div>
+
+        <div class="guides-container">
+            <div class="left-guide">
+                <div class="motorcycle-photo">
+                    <img src="./assets/images/motorcycle.jpeg" alt="Couple on Motorcycle">
+                </div>
+                <div class="attire-guide">
+                    <h2>Attire Guide</h2>
+                    <p>We would love to see you in your semi formal attire that suits with our color (sage green)</p>
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background-color: #4A5D4C; left: 1rem"></div>
+                        <div class="color-swatch" style="background-color: #7C9B7C; left: 2rem"></div>
+                        <div class="color-swatch" style="background-color: #A3B9A3; left: 3rem"></div>
+                        <div class="color-swatch" style="background-color: #CBD8CB; left: 4rem"></div>
+                        <div class="color-swatch" style="background-color: #E8F1E8; left: 5rem"></div>
+                    </div>
+                    <div class="dress-code-guide">
+                        <div class="dress-code-item">
+                            <h3>Ladies</h3>
+                            <p>Semi-formal dresses, cocktail length or full length in sage green tones</p>
+                        </div>
+                        <div class="dress-code-item">
+                            <h3>Gentlemen</h3>
+                            <p>Dark suit or blazer with dress pants, sage green accents are welcome</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-guide">
+                <div class="gift-guide">
+                    <h2>Gift Guide</h2>
+                    <p>With all that we have, we are truly blessed, your presence and prayer are that we request but if you desire to give nonetheless, monetary gift is one we suggest.</p>
+                    <div class="qr-code">
+                        <img src="./assets/images/qr-code.png" alt="QR Code">
+                        <p>SCAN ME</p>
+                    </div>
+                </div>
+                <div class="cafe-photo">
+                    <img src="./assets/images/cafe.jpeg" alt="Couple at Cafe">
+                </div>
+            </div>
+        </div>
+
+        <div class="rsvp-section">
+            <h2>Will you be joining us?</h2>
+            <p>We have reserved seat/s for you</p>
+            <p>Please confirm your attendance on/before</p>
+            <p class="rsvp-date">JUNE 1, 2025</p>
+            
+            <form class="rsvp-form" action="https://formsubmit.co/gennjocotmaya@gmail.com" method="POST">
+                <div class="form-group">
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" name="Email">
+                </div>
+                <div class="form-group">
+                    <label for="attending">Will you attend?*</label>
+                    <select id="attending" name="Attending" required>
+                        <option value="">Please select...</option>
+                        <option value="Yes">Yes, I will attend</option>
+                        <option value="No">No, I cannot attend</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Send RSVP</button>
+                
+                <!-- Anti-spam honeypot -->
+                <input type="text" name="_honey" style="display: none">
+                
+                <!-- Disable Captcha -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- Success page -->
+                <input type="hidden" name="_next" value="https://gennjocotmaya.github.io/thank-you.html">
+            </form>
+        </div>
+        <div class="page-navigation">
+            <a href="entourage-2.html" class="prev-page">← Previous Page</a>
+        </div>
+    </div>
+</body>
+</html> 
