@@ -672,6 +672,17 @@ footer {
         width: 25px;
         height: 25px;
     }
+
+    .qr-code img {
+        width: 80%;
+        height: 80%;
+    }
+}
+@media (max-width: 500px) {
+    .qr-code img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .dress-code-guide {
