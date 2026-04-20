@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Json Gregory – Christening Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f0f4f8; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+
+  .card {
+    width: 480px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(100,149,237,0.18);
+    font-family: 'Fira Code', monospace;
+  }
+
+  .card-header {
+    background: linear-gradient(160deg, #deeeff 0%, #e8f4fd 40%, #f3e8f7 100%);
+    padding: 36px 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .rainbow-svg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .bear-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bear-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 16px rgba(100,149,237,0.18));
+  }
+
+  .verse-box {
+    background: rgba(255,255,255,0.7);
+    border: 1.5px dashed #aecbf0;
+    border-radius: 12px;
+    padding: 10px 18px;
+    margin: 0 36px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 12.5px;
+    color: #5a7fb5;
+    text-align: center;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-body {
+    padding: 28px 36px 32px;
+    background: #fff;
+  }
+
+  .card-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(bear_rainbow.jpg);
+    background-position: bottom left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  .code-comment {
+    font-size: 11px;
+    color: #9fbad4;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+  }
+
+  .inviting-text {
+    font-size: 11.5px;
+    color: #7baad1;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 18px;
+  }
+
+  .name-block {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .name-keyword {
+    font-size: 10px;
+    color: #c792ea;
+    font-family: 'Fira Code', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .baby-name {
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    font-size: 34px;
+    color: #2a6496;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+  }
+
+  .baby-name .bracket { color: #aecbf0; font-weight: 300; }
+  .baby-name .dot { color: #c792ea; }
+
+  .ceremony-type {
+    font-size: 10.5px;
+    font-family: 'Fira Code', monospace;
+    color: #82b4d8;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px dashed #c8def2;
+    margin: 18px 0;
+  }
+
+  .details-block { display: grid; gap: 13px; }
+
+  .detail-row { display: flex; align-items: flex-start; gap: 10px; }
+
+  .detail-key {
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    color: #c792ea;
+    min-width: 80px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .detail-colon { color: #aecbf0; font-size: 12px; padding-top: 2px; flex-shrink: 0; }
+
+  .detail-value {
+    font-family: 'Fira Code', monospace;
+    font-size: 12.5px;
+    color: #2a5a8c;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .detail-value .string { color: #3d8b37; }
+  .detail-value .number { color: #e67e22; }
+
+  .footer-block {
+    margin-top: 22px;
+    padding: 14px 18px;
+    background: #eaf3fb;
+    border-radius: 10px;
+    border-left: 3px solid #7baad1;
+  }
+
+  .footer-comment { font-family: 'Fira Code', monospace; font-size: 10.5px; color: #9fbad4; margin-bottom: 5px; }
+
+  .footer-msg { font-family: 'Fira Code', monospace; font-size: 11.5px; color: #4a80b0; line-height: 1.6; }
+  .footer-msg .keyword { color: #c792ea; }
+
+  .paw-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; padding-bottom: 4px; }
+  .paw-dot { width: 8px; height: 8px; border-radius: 50%; background: #aecbf0; }
+  .paw-dot:nth-child(2) { background: #c6a7e0; }
+  .paw-dot:nth-child(3) { background: #f7c5a0; }
+  .paw-dot:nth-child(4) { background: #aecbf0; }
+  .paw-dot:nth-child(5) { background: #c6a7e0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    
+    <!-- <div class="bear-area">
+      <img class="bear-img" src="./bear_rainbow_2.jpg" alt="Bear with rainbow and balloons"/>
+    </div> -->
+    <div class="verse-box">
+      "Before I formed you in the womb I knew you,<br>before you were born I set you apart."<br>
+      <span style="font-style:normal;font-size:11px;color:#7baad1;">— Jeremiah 1:5</span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="code-comment">// You are cordially invited to celebrate the</div>
+    <div class="inviting-text">christening.baptize(<span style="color:#3d8b37">"Holy Sacrament"</span>);</div>
+
+    <div class="name-block">
+      <span class="name-keyword">const newSoul =</span>
+      <div class="baby-name">
+        <span class="bracket">{</span> Json<span class="dot">.</span>Gregory <span class="bracket">}</span>
+      </div>
+      <span class="ceremony-type">// Holy Baptism</span>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="details-block">
+      <div class="detail-row">
+        <span class="detail-key">church</span>
+        <span class="detail-colon">:</span>
+        <span class="detail-value"><span class="string">"St. Francis of Assisi,<br>Balamban Parish Church"</span></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">date</span>
+        <span class="detail-colon">:</span>
+        <span class="detail-value"><span class="string">"April 26, 2026"</span></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">time</span>
+        <span class="detail-colon">:</span>
+        <span class="detail-value"><span class="number">10:30</span> <span style="color:#9fbad4">// AM</span></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">reception</span>
+        <span class="detail-colon">:</span>
+        <span class="detail-value"><span class="string">"Dian's Place,<br>Balamban Cebu"</span></span>
+      </div>
+    </div>
+
+    <div class="footer-block">
+      <div class="footer-comment">/* Your presence is the greatest gift */</div>
+      <div class="footer-msg">
+        <span class="keyword">return</span> love.celebrate(<span style="color:#3d8b37">"Json Gregory"</span>);<br>
+        <span style="color:#9fbad4">// We can't wait to share this blessing with you ♡</span>
+      </div>
+    </div>
+
+    <div class="paw-dots">
+      <div class="paw-dot"></div>
+      <div class="paw-dot"></div>
+      <div class="paw-dot"></div>
+      <div class="paw-dot"></div>
+      <div class="paw-dot"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
